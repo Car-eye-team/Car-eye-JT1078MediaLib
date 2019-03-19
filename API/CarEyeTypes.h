@@ -1,13 +1,13 @@
 /*
- * Car eye │╡┴╛╣▄└э╞╜╠и: www.car-eye.cn
- * Car eye ┐к╘┤═°╓╖: https://github.com/Car-eye-team
+ * Car eye я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╞╜╠и: www.car-eye.cn
+ * Car eye я┐╜я┐╜╘┤я┐╜я┐╜╓╖: https://github.com/Car-eye-team
  * CarEyeTypes.h
  *
  * Author: Wgj
  * Date: 2018-04-11 20:56
  * Copyright 2018
  *
- * CarEye ═╞┴ў╞ў└р╨═╢и╥х╔∙├ў═╖╬─╝■
+ * CarEye я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═╢я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═╖я┐╜─╝я┐╜
  */
 
 #ifndef __CAREYE_TYPES_H__
@@ -21,89 +21,96 @@
 #define CE_APICALL 
 #endif
 
-typedef unsigned char BYTE;
-typedef unsigned short WORD;
-
- // ▒╛╜╙┐┌┐т┤э╬є┬ы╢и╥х
+ // я┐╜я┐╜я┐╜╙┐┌┐я┐╜я┐╜я┐╜я┐╜я┐╜ы╢ия┐╜я┐╜
 typedef enum __CarEye_Error__
 {
-	// ╬▐┤э╬є, │╔╣ж╡─
+	// я┐╜▐┤я┐╜я┐╜я┐╜, я┐╜╔╣я┐╜я┐╜я┐╜
 	CAREYE_NOERROR = 0,
-	// ▓╗╓з│╓╡─╣ж─▄, ╬┤╩╡╧╓╡─
+	// я┐╜я┐╜╓зя┐╜╓╡─╣я┐╜я┐╜я┐╜, ╬┤╩╡я┐╜╓╡я┐╜
 	CAREYE_UNSUPPORTED = -1,
-	// ╧╡═││ї╩╝╗п╩з░▄
+	// ╧╡═│я┐╜я┐╜╩╝я┐╜я┐╜╩зя┐╜я┐╜
 	CAREYE_INITFAIL = -2,
-	// ╬▐═╞┴ў═и╡└┐╔╔ъ╟ы┴╦
+	// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═ия┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_NOCHANNEL = -3,
-	// ┤┤╜и═╞┴ў╞ў╗Є╞ф╦√╢╘╧є╩з░▄
+	// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╩зя┐╜я┐╜
 	CAREYE_CREATE_FAIL = -4,
-	// ╬▐╨з╡─╩ф╚ы▓╬╩¤
+	// я┐╜я┐╜╨зя┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_INVALID_PARAM = -5,
-	// ╝°╚и┤э╬є
+	// я┐╜я┐╜╚ия┐╜я┐╜я┐╜я┐╜
 	CAREYE_AUTH = -6,
-	// ╖в╦═╩з░▄
+	// я┐╜я┐╜я┐╜я┐╜╩зя┐╜я┐╜
 	CAREYE_SEND_FAILE = -7,
 }CarEyeError;
 
-// ═╞┴ў╞ў└р╨═╢и╥х
+// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═╢я┐╜я┐╜я┐╜
 typedef enum __PUSHER_TYPE__
 {
-	// ╓▒╜╙═╞╦═RTSP╩¤╛▌┴ў╡─═╞╦═╞ў
+	// ╓▒я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜RTSPя┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	PUSHER_RTSP = 0,
-	// ═╞╦═▒╛╡╪╬─╝■RTSP┴ў╡─═╞╦═╞ў
+	// я┐╜я┐╜я┐╜═▒я┐╜я┐╜я┐╜я┐╜─╝я┐╜RTSPя┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	PUSHER_NATIVEFILE_RTSP,
-	// ═╞╦═RTMP╩¤╛▌┴ў╡─═╞╦═╞ў
+	// я┐╜я┐╜я┐╜я┐╜RTMPя┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	PUSHER_RTMP,
-	// ═╞╦═▒╛╡╪╬─╝■RTMP┴ў╡─═╞╦═╞ў
+	// я┐╜я┐╜я┐╜═▒я┐╜я┐╜я┐╜я┐╜─╝я┐╜RTMPя┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	PUSHER_NATIVEFILE_RTMP,
 }CarEyePusherType;
 
-//░┤╒╒JT1078 ╨н╥щ╓╪╨┬╢и╥х╥Ї╩╙╞╡▒р┬ы
+//я┐╜я┐╜я┐╜я┐╜JT1078 ╨ня┐╜я┐╜я┐╜я┐╜я┐╜┬╢я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜
 
-// ╩╙╞╡▒р┬ы└р╨═╢и╥х
+// я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═╢я┐╜я┐╜я┐╜
 typedef enum __VIDEO_CODE_TYPE__
 {
-	// H264▒р┬ы
+	// H264я┐╜я┐╜я┐╜я┐╜
 	CAREYE_VCODE_H264 = 98,
-	// H265▒р┬ы
+	// H265я┐╜я┐╜я┐╜я┐╜
 	CAREYE_VCODE_H265 = 99,
 }CarEye_VCodeType;
 
-// ╥Ї╞╡▒р┬ы└р╨═╢и╥х
+// я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═╢я┐╜я┐╜я┐╜
 typedef enum __AUDIO_CODE_TYPE__
 {
-	// AAC▒р┬ы
+	// AACя┐╜я┐╜я┐╜я┐╜
 	CAREYE_ACODE_AAC = 0x13,
-	// G711 Ulaw▒р┬ы
-	CAREYE_ACODE_G711U = 0x6,
-	// G711 Alaw▒р┬ы
-	CAREYE_ACODE_G711A = 0x7,
-	// G726▒р┬ы
-	CAREYE_ACODE_G726 = 0x9,
+	// G711 Ulawя┐╜я┐╜я┐╜я┐╜
+	CAREYE_ACODE_G711U = 7,
+	// G711 Alawя┐╜я┐╜я┐╜я┐╜
+	CAREYE_ACODE_G711A = 6,
+	// G726я┐╜я┐╜я┐╜я┐╜
+	CAREYE_ACODE_G726 = 8,
 }CarEye_ACodeType;
 
-// ╥к═╞┴ў╡─├╜╠х╨┼╧в╜с╣╣╠х
+typedef enum __NET_WORK_TYPE__
+{
+	// AACя┐╜я┐╜я┐╜я┐╜
+	CAREYE_SELET=0,
+	// G711 Ulawя┐╜я┐╜я┐╜я┐╜
+	CAREYE_EPOOL = 1,	
+}CarEye_NetWork;
+
+
+
+// ╥кя┐╜я┐╜я┐╜я┐╜я┐╜я┐╜├╜я┐╜я┐╜я┐╜я┐╜╧вя┐╜с╣╣я┐╜я┐╜
 typedef struct __MEDIA_INFO_T
 {
-	// ╩╙╞╡▒р┬ы└р╨═
+	// я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CarEye_VCodeType VideoCodec;
-	// ╩╙╞╡╓б┬╩, ╥╗░у╬к25
+	// я┐╜я┐╜╞╡╓бя┐╜я┐╜, ╥╗я┐╜я┐╜╬к25
 	unsigned int VideoFps;	
 	char SIM[14];
-	unsigned int channel; //╔у╧ё═╖┬▀╝н═и╡└
-	// ╥Ї╞╡▒р┬ы└р╨═
+	unsigned int channel; //я┐╜я┐╜я┐╜я┐╜═╖я┐╜▀╝я┐╜═ия┐╜я┐╜
+	// я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CarEye_ACodeType AudioCodec;
-	// ╥Ї╞╡▓╔╤∙┬╩, ┬╝╓╞╚╦╔∙╥╗░у╬к8000
+	// я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜, ┬╝я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╥╗я┐╜я┐╜╬к8000
 	unsigned int Samplerate;
-	// ╥Ї╞╡═и╡└╩¤, ╥╗░у╤б╘ё╬к1
+	// я┐╜я┐╜╞╡═ия┐╜я┐╜я┐╜я┐╜, ╥╗я┐╜я┐╜╤бя┐╜я┐╜╬к1
 	unsigned int Channels;
-	// ╥Ї╞╡▓╔╤∙┬╩, ▓╔╤∙╛л╢╚
+	// я┐╜я┐╜╞╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜, я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	unsigned int AudioBitsPerSample;
 
 
 }CarEye_MediaInfo;
 
-// ╩╙╞╡╓б└р╨═╢и╥х
+// я┐╜я┐╜╞╡╓бя┐╜я┐╜я┐╜═╢я┐╜я┐╜я┐╜
 typedef enum __VIDEO_FRAME_TYPE__
 {
 	// I╓б
@@ -116,60 +123,60 @@ typedef enum __VIDEO_FRAME_TYPE__
 	VIDEO_FRAME_J = 0x04,
 }CarEyeVideoFrameType;
 
-// ╩╙╞╡╓б▒ъ╩╢
+// я┐╜я┐╜╞╡╓бя┐╜я┐╜╩╢
 #define CAREYE_VFRAME_FLAG	0x00000001
-// ╥Ї╞╡╓б▒ъ╩╢
+// я┐╜я┐╜╞╡╓бя┐╜я┐╜╩╢
 #define CAREYE_AFRAME_FLAG	0x00000002
 
-// ├╜╠х╓б╨┼╧в╜с╣╣╢и╥х
+// ├╜я┐╜я┐╜╓бя┐╜я┐╜╧вя┐╜с╣╣я┐╜я┐╜я┐╜я┐╜
 typedef struct __CAREYE_AV_Frame_T
 {
-	// ╓б└р╨═▒ъ╩╢ CAREYE_VFRAME_FLAG╗Є╒▀CAREYE_AFRAME_FLAG
+	// ╓бя┐╜я┐╜я┐╜═▒я┐╜╩╢ CAREYE_VFRAME_FLAGя┐╜я┐╜я┐╜я┐╜CAREYE_AFRAME_FLAG
 	unsigned int	FrameFlag;
-	// ╓б╡─╩¤╛▌│д╢╚
+	// ╓бя┐╜я┐╜я┐╜я┐╜я┐╜▌│я┐╜я┐╜я┐╜
 	unsigned int	FrameLen;
-	// ╩╙╞╡╓б└р╨═, ▓╬┐╝CarEyeVideoFrameType╢и╥х
+	// я┐╜я┐╜╞╡╓бя┐╜я┐╜я┐╜я┐╜, я┐╜╬┐я┐╜CarEyeVideoFrameTypeя┐╜я┐╜я┐╜я┐╜
 	unsigned int	VFrameType;
-	// ╩¤╛▌╗║│х╟°
+	// я┐╜я┐╜я┐╜▌╗я┐╜я┐╜я┐╜я┐╜я┐╜
 	unsigned char	*Buffer;
-	// ╩▒╝ф┤┴╫▄├ы╩¤
+	// ╩▒я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	unsigned int	Second;
-	// ╩▒╝ф┤┴├ы╩¤╬▐╖и╛л╚╖╡─╬в├ы╩¤, ╖╟╫▄╬в├ы╩¤, ╙ыSecond╜с║╧╨╬│╔╛л╚╖╩▒╝ф
+	// ╩▒я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜▐╖я┐╜я┐╜я┐╜╚╖я┐╜я┐╜╬вя┐╜я┐╜я┐╜я┐╜, я┐╜я┐╜я┐╜я┐╜╬вя┐╜я┐╜я┐╜я┐╜, я┐╜я┐╜Secondя┐╜я┐╜я┐╜я┐╜╬│╔╛я┐╜╚╖╩▒я┐╜я┐╜
 	unsigned int	USecond;
 	unsigned short  LastIFrameInterval;
 	unsigned short  LastFrameInterval;
 
 }CarEye_AV_Frame;
 
-// ═╞┴ў╞ў╫┤╠м╢и╥х
+// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╫┤╠мя┐╜я┐╜я┐╜я┐╜
 typedef enum __CAREYE_STATE_TYPE__
 {
-	// ╒¤╘┌┴м╜╙╖■╬ё╞ў╓╨
+	// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╙╖я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_STATE_CONNECTING = 1,
-	// ╥╤│╔╣ж┴м╜╙╡╜╖■╬ё╞ў
+	// я┐╜╤│╔╣я┐╜я┐╜я┐╜я┐╜╙╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_STATE_CONNECTED = 2,
-	// ╖■╬ё╞ў┴м╜╙╩з░▄
+	// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╩зя┐╜я┐╜
 	CAREYE_STATE_CONNECT_FAILED = 3,
-	// ═╞┴ў╥ь│г╓╨╢╧, ┤╦╩▒╙ж╕├═г╓╣═╞┴ў╗Є╒▀╓╪╨┬╞Ї╢п═╞┴ў╞ў┴╦...
+	// я┐╜я┐╜я┐╜я┐╜я┐╜ь│гя┐╜╨╢я┐╜, я┐╜я┐╜╩▒╙жя┐╜я┐╜═г╓╣я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜...
 	CAREYE_STATE_CONNECT_ABORT = 4,
-	// ╒¤╘┌═╞┴ў╓╨
+	// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_STATE_PUSHING = 5,
-	// ╙ы╖■╬ё╞ў╢╧┐к┴┤╜╙
+	// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╧┐я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_STATE_DISCONNECTED = 6,
-	// ▒╛╡╪╬─╝■═╞┴ў╥╤═ъ│╔
+	// я┐╜я┐╜я┐╜я┐╜я┐╜─╝я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 	CAREYE_STATE_FILE_FINISHED = 7,
-	// ╬┤╓к┤э╬є
+	// ╬┤╓кя┐╜я┐╜я┐╜я┐╜
 	CAREYE_STATE_ERROR = 0xFF,
 }CarEyeStateType;
 
 /*
-* Comments: ═╞┴ў╞ў╫┤╠м▒ф╗п═и╓к╗╪╡ў║п╩¤╔∙├ў
-* Param channel: ═╞┴ў╞ў╡─═и╡└║┼
+* Comments: я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╫┤╠мя┐╜ф╗п═и╓кя┐╜╪╡я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
+* Param channel: я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜═ия┐╜я┐╜я┐╜я┐╜
 * Param state: ╩╡╩▒╫┤╠м
-* Param FrameType: ═╞┴ў╞ў└р╨═
+* Param FrameType: я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 * @Return int
 */
-typedef int(*CarEyePusher_StateChanged)(int channel, CarEyeStateType state, CarEyePusherType FrameType);
+typedef int(*CarEyePusher_Callback_interface)(int channel, CarEyeStateType state, CarEye_AV_Frame* pFrame, CarEyePusherType FrameType);
 
 
 #endif
