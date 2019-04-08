@@ -1,14 +1,14 @@
 /*
- * Car eye ��������ƽ̨: www.car-eye.cn
- * Car eye ��Դ��ַ: https://github.com/Car-eye-team
- * CarEyeTypes.h
- *
- * Author: Wgj
- * Date: 2018-04-11 20:56
- * Copyright 2018
- *
- * CarEye ���������Ͷ�������ͷ�ļ�
- */
+* Car eye 车辆管理平台: www.car-eye.cn
+* Car eye 开源网址: https://github.com/Car-eye-team
+* CarEyeTypes.h
+*
+* Author: Wgj
+* Date: 2018-04-11 20:56
+* Copyright 2018
+*
+* CarEye 推流器类型定义声明头文件
+*/
 
 #ifndef __CAREYE_TYPES_H__
 #define __CAREYE_TYPES_H__
@@ -21,159 +21,159 @@
 #define CE_APICALL 
 #endif
 
- // ���ӿڿ�����붨��
+// 本接口库错误码定义
 typedef enum __CarEye_Error__
 {
-	// �޴���, �ɹ���
+	// 无错误, 成功的
 	CAREYE_NOERROR = 0,
-	// ��֧�ֵĹ���, δʵ�ֵ�
+	// 不支持的功能, 未实现的
 	CAREYE_UNSUPPORTED = -1,
-	// ϵͳ��ʼ��ʧ��
+	// 系统初始化失败
 	CAREYE_INITFAIL = -2,
-	// ������ͨ����������
+	// 无推流通道可申请了
 	CAREYE_NOCHANNEL = -3,
-	// ��������������������ʧ��
+	// 创建推流器或其他对象失败
 	CAREYE_CREATE_FAIL = -4,
-	// ��Ч���������
+	// 无效的输入参数
 	CAREYE_INVALID_PARAM = -5,
-	// ��Ȩ����
+	// 鉴权错误
 	CAREYE_AUTH = -6,
-	// ����ʧ��
+	// 发送失败
 	CAREYE_SEND_FAILE = -7,
 }CarEyeError;
 
-// ���������Ͷ���
+// 推流器类型定义
 typedef enum __PUSHER_TYPE__
 {
-	// ֱ������RTSP��������������
+	// 直接推送RTSP数据流的推送器
 	PUSHER_RTSP = 0,
-	// ���ͱ����ļ�RTSP����������
+	// 推送本地文件RTSP流的推送器
 	PUSHER_NATIVEFILE_RTSP,
-	// ����RTMP��������������
+	// 推送RTMP数据流的推送器
 	PUSHER_RTMP,
-	// ���ͱ����ļ�RTMP����������
+	// 推送本地文件RTMP流的推送器
 	PUSHER_NATIVEFILE_RTMP,
 }CarEyePusherType;
 
-//����JT1078 Э�����¶�������Ƶ����
+//按照JT1078 协议重新定义音视频编码
 
-// ��Ƶ�������Ͷ���
+// 视频编码类型定义
 typedef enum __VIDEO_CODE_TYPE__
 {
-	// H264����
+	// H264编码
 	CAREYE_VCODE_H264 = 98,
-	// H265����
+	// H265编码
 	CAREYE_VCODE_H265 = 99,
 }CarEye_VCodeType;
 
-// ��Ƶ�������Ͷ���
+// 音频编码类型定义
 typedef enum __AUDIO_CODE_TYPE__
 {
-	// AAC����
+	// AAC编码
 	CAREYE_ACODE_AAC = 0x13,
-	// G711 Ulaw����
+	// G711 Ulaw编码
 	CAREYE_ACODE_G711U = 7,
-	// G711 Alaw����
+	// G711 Alaw编码
 	CAREYE_ACODE_G711A = 6,
-	// G726����
+	// G726编码
 	CAREYE_ACODE_G726 = 8,
 }CarEye_ACodeType;
 
 typedef enum __NET_WORK_TYPE__
 {
-	// AAC����
-	CAREYE_SELET=0,
-	// G711 Ulaw����
-	CAREYE_EPOOL = 1,	
+	// AAC编码
+	CAREYE_SELET = 0,
+	// G711 Ulaw编码
+	CAREYE_EPOOL = 1,
 }CarEye_NetWork;
 
 
 
-// Ҫ������ý����Ϣ�ṹ��
+// 要推流的媒体信息结构体
 typedef struct __MEDIA_INFO_T
 {
-	// ��Ƶ��������
+	// 视频编码类型
 	CarEye_VCodeType VideoCodec;
-	// ��Ƶ֡��, һ��Ϊ25
-	unsigned int VideoFps;	
+	// 视频帧率, 一般为25
+	unsigned int VideoFps;
 	char SIM[14];
-	unsigned int channel; //����ͷ�߼�ͨ��
-	// ��Ƶ��������
+	unsigned int channel; //摄像头逻辑通道
+						  // 音频编码类型
 	CarEye_ACodeType AudioCodec;
-	// ��Ƶ������, ¼������һ��Ϊ8000
+	// 音频采样率, 录制人声一般为8000
 	unsigned int Samplerate;
-	// ��Ƶͨ����, һ��ѡ��Ϊ1
+	// 音频通道数, 一般选择为1
 	unsigned int Channels;
-	// ��Ƶ������, ��������
+	// 音频采样率, 采样精度
 	unsigned int AudioBitsPerSample;
 
 
 }CarEye_MediaInfo;
 
-// ��Ƶ֡���Ͷ���
+// 视频帧类型定义
 typedef enum __VIDEO_FRAME_TYPE__
 {
-	// I֡
+	// I帧
 	VIDEO_FRAME_I = 0x01,
-	// P֡
+	// P帧
 	VIDEO_FRAME_P = 0x02,
-	// B֡
+	// B帧
 	VIDEO_FRAME_B = 0x03,
 	// JPEG
 	VIDEO_FRAME_J = 0x04,
 }CarEyeVideoFrameType;
 
-// ��Ƶ֡��ʶ
+// 视频帧标识
 #define CAREYE_VFRAME_FLAG	0x00000001
-// ��Ƶ֡��ʶ
+// 音频帧标识
 #define CAREYE_AFRAME_FLAG	0x00000002
 
-// ý��֡��Ϣ�ṹ����
+// 媒体帧信息结构定义
 typedef struct __CAREYE_AV_Frame_T
 {
-	// ֡���ͱ�ʶ CAREYE_VFRAME_FLAG����CAREYE_AFRAME_FLAG
+	// 帧类型标识 CAREYE_VFRAME_FLAG或者CAREYE_AFRAME_FLAG
 	unsigned int	FrameFlag;
-	// ֡�����ݳ���
+	// 帧的数据长度
 	unsigned int	FrameLen;
-	// ��Ƶ֡����, �ο�CarEyeVideoFrameType����
+	// 视频帧类型, 参考CarEyeVideoFrameType定义
 	unsigned int	VFrameType;
-	// ���ݻ�����
+	// 数据缓冲区
 	unsigned char	*Buffer;
-	// ʱ���������
+	// 时间戳总秒数
 	unsigned int	Second;
-	// ʱ��������޷���ȷ��΢����, ����΢����, ��Second����γɾ�ȷʱ��
+	// 时间戳秒数无法精确的微秒数, 非总微秒数, 与Second结合形成精确时间
 	unsigned int	USecond;
 	unsigned short  LastIFrameInterval;
 	unsigned short  LastFrameInterval;
 
 }CarEye_AV_Frame;
 
-// ������״̬����
+// 推流器状态定义
 typedef enum __CAREYE_STATE_TYPE__
 {
-	// �������ӷ�������
+	// 正在连接服务器中
 	CAREYE_STATE_CONNECTING = 1,
-	// �ѳɹ����ӵ�������
+	// 已成功连接到服务器
 	CAREYE_STATE_CONNECTED = 2,
-	// ����������ʧ��
+	// 服务器连接失败
 	CAREYE_STATE_CONNECT_FAILED = 3,
-	// �����쳣�ж�, ��ʱӦ��ֹͣ������������������������...
+	// 推流异常中断, 此时应该停止推流或者重新启动推流器了...
 	CAREYE_STATE_CONNECT_ABORT = 4,
-	// ����������
+	// 正在推流中
 	CAREYE_STATE_PUSHING = 5,
-	// ��������Ͽ�����
+	// 与服务器断开链接
 	CAREYE_STATE_DISCONNECTED = 6,
-	// �����ļ����������
+	// 本地文件推流已完成
 	CAREYE_STATE_FILE_FINISHED = 7,
-	// δ֪����
+	// 未知错误
 	CAREYE_STATE_ERROR = 0xFF,
 }CarEyeStateType;
 
 /*
-* Comments: ������״̬�仯֪ͨ�ص���������
-* Param channel: ��������ͨ����
-* Param state: ʵʱ״̬
-* Param FrameType: ����������
+* Comments: 推流器状态变化通知回调函数声明
+* Param channel: 推流器的通道号
+* Param state: 实时状态
+* Param FrameType: 推流器类型
 * @Return int
 */
 typedef int(*CarEyePusher_Callback_interface)(int channel, CarEyeStateType state, CarEye_AV_Frame* pFrame, CarEyePusherType FrameType);
